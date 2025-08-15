@@ -8,7 +8,7 @@ def dropdown(driver, wait):
     assert dropdown_link.is_displayed()
     dropdown_link.click()
 
-    select_options = wait.until(EC.presence_of_element_located((By.ID, "dropdown")))
+    select_options = wait.until(EC.element_to_be_clickable((By.ID, "dropdown")))
     select = Select(select_options)
 
     select.select_by_value("1")
