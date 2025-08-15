@@ -12,11 +12,9 @@ def dropdown(driver, wait):
     select = Select(select_options)
 
     select.select_by_value("1")
-    selected_option = select.first_selected_option
-    assert selected_option.get_attribute("value") == "1"
+    assert select.first_selected_option.get_attribute("value") == "1"
 
-    select.select_by_value("2")
-    selected_option = select.first_selected_option
-    assert selected_option.get_attribute("value") == "2"
+    select.select_by_visible_text("Option 2")
+    assert select.first_selected_option.get_attribute("value") == "2"
    
     
