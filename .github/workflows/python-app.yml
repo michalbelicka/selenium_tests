@@ -4,10 +4,11 @@
 name: Selenium_tests_ci
 
 on:
-  push:
-    branches: ["master"]
-  pull_request:
-    branches: ["master"]
+  []
+  # push:
+  #   branches: ["master"]
+  # pull_request:
+  #   branches: ["master"]
 
 permissions:
   contents: read
