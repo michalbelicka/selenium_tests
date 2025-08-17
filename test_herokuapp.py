@@ -20,12 +20,12 @@ from invalid_login import invalid_login
 @pytest.fixture(scope="session")
 def driver():
     # set Chrome to run headless and CI-friendly execution
+    service = Service(ChromeDriverManager().install())
+    options = Options()
     if os.getenv("HEADLESS") == "true":
-        options = Options()
         options.add_argument("--headless")
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
-    service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service, options=options)
     yield driver
     driver.quit()
