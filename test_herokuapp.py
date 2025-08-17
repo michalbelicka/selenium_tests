@@ -16,6 +16,7 @@ from inputs import inputs_and_expected
 from status_codes import statuscodes
 from valid_login import valid_login
 from invalid_login import invalid_login
+from key_presses import key_presses
 
 @pytest.fixture(scope="session")
 def driver():
@@ -55,6 +56,9 @@ def test_disappearing_elements(driver, wait):
 
 def test_dropdown(driver, wait):
     dropdown(driver, wait)
+
+def test_key_presses(driver, wait):
+    key_presses(driver, wait)
 
 def test_dynamic_loading(driver, wait):
     dynamic_load(driver, wait)
