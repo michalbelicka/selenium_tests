@@ -16,7 +16,7 @@ jobs:
   Selenium_tests_pytest_run:
     runs-on: ubuntu-latest
     env:
-      HEADLESS: true
+      HEADLESS: "true"
 
     steps:
       - name: checkout code
