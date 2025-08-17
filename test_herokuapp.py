@@ -19,8 +19,8 @@ from invalid_login import invalid_login
 
 @pytest.fixture(scope="session")
 def driver():
-    # set Chrome to run headless and CI-friendly execution
     service = Service(ChromeDriverManager().install())
+    # set Chrome to run headless and CI-friendly execution
     options = Options()
     if os.getenv("HEADLESS") == "true":
         options.add_argument("--headless")
