@@ -18,6 +18,7 @@ from valid_login import valid_login
 from invalid_login import invalid_login
 from key_presses import key_presses
 from hovers import hovers
+from multiple_windows import multiple_windows
 
 @pytest.fixture(scope="session")
 def driver():
@@ -57,6 +58,9 @@ def test_disappearing_elements(driver, wait):
 
 def test_dropdown(driver, wait):
     dropdown(driver, wait)
+
+def test_multiple_windows(driver, wait):
+    multiple_windows(driver, wait)
 
 def test_key_presses(driver, wait):
     key_presses(driver, wait)
