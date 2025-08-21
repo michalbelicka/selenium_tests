@@ -19,6 +19,7 @@ This project tests different parts of the website https://the-internet.herokuapp
 - Uses waits to find elements before actions
 - Checks element visibility and clickability before interaction
 - Uses ActionChains for hover and move_by_offset interactions
+- Uses GitHub Actions CI workflow to automatically run tests on schedule, push, or pull request
 
 ## How to run tests
 

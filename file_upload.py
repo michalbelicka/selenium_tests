@@ -14,7 +14,6 @@ def upload_file(driver, wait):
     assert os.path.exists(file_path)
     choose_file.send_keys(file_path)
 
-
     upload_button = wait.until(EC.element_to_be_clickable((By.ID, "file-submit")))
     assert upload_button.is_displayed()
     upload_button.click()
