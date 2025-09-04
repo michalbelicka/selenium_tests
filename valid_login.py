@@ -1,4 +1,5 @@
 from selenium_setup import *
+from selenium.common.exceptions import NoAlertPresentException
 
 def valid_login(driver, wait):
 
@@ -12,6 +13,12 @@ def valid_login(driver, wait):
     assert password.is_displayed()
     password.send_keys("SuperSecretPassword!", Keys.ENTER)
 
+    try:
+        alert = driver.switch_to.alert
+        alert.accept()
+    except NoAlertPresentException:
+        pass
+
     secure_area_h2 = wait.until(EC.visibility_of_element_located((By.TAG_NAME, "h2")))
-    if secure_area_h2.text == "Secure Area":
-        assert True
+    assert secure_area_h2.text == "Secure Area"
+        
