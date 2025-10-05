@@ -23,16 +23,14 @@ This project tests different parts of the website https://the-internet.herokuapp
 
 ## How to run tests
 
-To run tests, follow these steps:
+1. Clone the repository:  
+   `git clone https://github.com/michalbelicka/selenium_tests.git
 
-Clone the repository:
-git clone https://github.com/michalbelicka/selenium_tests.git
+2. Change into the project directory:  
+   `cd Selenium_tests`
 
-Change into the project directory:
-cd Selenium_tests
+3. Install dependencies:  
+   `pip install -r requirements.txt`
 
-Install dependencies:
-pip install -r requirements.txt
-
-Run the tests:
-pytest -v
+4. Run the tests:  
+   `pytest -v`
