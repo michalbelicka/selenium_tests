@@ -23,6 +23,16 @@ This project tests different parts of the website https://the-internet.herokuapp
 
 ## How to run tests
 
-- You need Python, pytest, and webdriver installed.
-- Run tests by typing:  
-  pytest
+To run tests, follow these steps:
+
+Clone the repository:
+git clone https://github.com/michalbelicka/selenium_tests.git
+
+Change into the project directory:
+cd Selenium_tests
+
+Install dependencies:
+pip install -r requirements.txt
+
+Run the tests:
+pytest -v
