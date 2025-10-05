@@ -24,7 +24,7 @@ This project tests different parts of the website https://the-internet.herokuapp
 ## How to run tests
 
 1. Clone the repository:  
-   `git clone https://github.com/michalbelicka/selenium_tests.git
+   `git clone https://github.com/michalbelicka/selenium_tests.git`
 
 2. Change into the project directory:  
    `cd Selenium_tests`
