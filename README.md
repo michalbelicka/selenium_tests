@@ -21,6 +21,12 @@ This project tests different parts of the website https://the-internet.herokuapp
 - Uses ActionChains for hover and move_by_offset interactions
 - Uses GitHub Actions CI workflow to automatically run tests on schedule, push, or pull request
 
+## Future Improvements
+
+- Add custom wait conditions to reduce code duplications
+- Add tests covering more scenarios on the page
+- Consider trying Playwright for comparison
+
 ## How to run tests
 
 1. Clone the repository:  
