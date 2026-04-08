@@ -4,7 +4,7 @@ name: Selenium_tests_ci
 
 on:
   push:
-    branches: ["master"]
+    branches: ["master", "refactor/POM"]
   pull_request:
     branches: ["master"]
   schedule:
