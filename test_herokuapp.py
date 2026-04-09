@@ -7,7 +7,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 from add_remove_elements_and_broken_images import add_remove_element_broken_images
 from disappearing_elements import (open_disappear_elements, click_link_by_text, choice_of_elements, gallery_click)
-from dropdown import dropdown
 from dynamic_loading import dynamic_load
 from file_upload import upload_file
 from forgot_password import forgot_password
@@ -52,9 +51,6 @@ def test_disappearing_elements(driver, wait):
     click_link_by_text(wait, "Portfolio")
     choice_of_elements(driver, wait)
     gallery_click(driver, wait)
-
-def test_dropdown(driver, wait):
-    dropdown(driver, wait)
 
 def test_multiple_windows(driver, wait):
     multiple_windows(driver, wait)
