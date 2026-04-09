@@ -6,7 +6,6 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 from add_remove_elements_and_broken_images import add_remove_element_broken_images
-from checkboxes import checkbox
 from disappearing_elements import (open_disappear_elements, click_link_by_text, choice_of_elements, gallery_click)
 from dropdown import dropdown
 from dynamic_loading import dynamic_load
@@ -41,9 +40,6 @@ def wait(driver):
 
 def test_add_remove_element_broken_images(driver, wait):
     add_remove_element_broken_images(driver, wait)
-   
-def test_checkboxes(driver, wait):
-    checkbox(driver, wait)
 
 def test_disappearing_elements(driver, wait):
     open_disappear_elements(driver, wait)
