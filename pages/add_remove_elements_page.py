@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
 
 class AddRemovePage:
 
@@ -26,14 +27,11 @@ class AddRemovePage:
         add_element_button.click()
     
     def get_delete_buttons_count(self):
-        delete_buttons = self.wait.until(EC.visibility_of_all_elements_located(self.DELETE_BUTTONS))
-        return len(delete_buttons)
+        return len(self.driver.find_elements(*self.DELETE_BUTTONS))
     
-    def click_delete_button_by_index(self, index):
-        delete_button = self.wait.until(EC.element_to_be_clickable(
-            (By.XPATH, f"(//button[text()='Delete'])[{index + 1}]")
-            ))
-        delete_button.click()
+    def delete_last_item(self):
+        buttons = self.wait.until(lambda driver: driver.find_elements(*self.DELETE_BUTTONS))
+        buttons[-1].click()
 
         
 
