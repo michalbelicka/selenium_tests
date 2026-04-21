@@ -22,16 +22,21 @@ class AddRemovePage:
         link = self.wait.until(EC.element_to_be_clickable(self.ADD_REMOVE_ELEMENTS_LINK))
         link.click()
     
-    def click_add_element(self):
-        add_element_button = self.wait.until(EC.element_to_be_clickable(self.ADD_ELEMENT))
-        add_element_button.click()
+    def add_elements(self, count):
+        for _ in range(count):
+            add_element_button = self.wait.until(EC.element_to_be_clickable(self.ADD_ELEMENT))
+            add_element_button.click()
     
     def get_delete_buttons_count(self):
         return len(self.driver.find_elements(*self.DELETE_BUTTONS))
     
-    def delete_last_item(self):
-        buttons = self.wait.until(lambda driver: driver.find_elements(*self.DELETE_BUTTONS))
-        buttons[-1].click()
+    def delete_last_items(self, count):
+        for _ in range(count):
+            self.wait.until(
+                lambda d: len(d.find_elements(*self.DELETE_BUTTONS)) > 0
+                )
+            buttons = self.driver.find_elements(*self.DELETE_BUTTONS)
+            buttons[-1].click()
 
         
 
