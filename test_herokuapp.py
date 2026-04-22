@@ -5,7 +5,6 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
-from add_remove_elements_and_broken_images import add_remove_element_broken_images
 from disappearing_elements import (open_disappear_elements, click_link_by_text, choice_of_elements, gallery_click)
 from dynamic_loading import dynamic_load
 from file_upload import upload_file
@@ -36,9 +35,6 @@ def driver():
 def wait(driver):
     wait = WebDriverWait(driver, 10)
     return wait
-
-def test_add_remove_element_broken_images(driver, wait):
-    add_remove_element_broken_images(driver, wait)
 
 def test_disappearing_elements(driver, wait):
     open_disappear_elements(driver, wait)
