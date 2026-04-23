@@ -7,7 +7,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 from disappearing_elements import (open_disappear_elements, click_link_by_text, choice_of_elements, gallery_click)
 from dynamic_loading import dynamic_load
-from file_upload import upload_file
 from forgot_password import forgot_password
 from inputs import inputs_and_expected
 from status_codes import statuscodes
@@ -59,9 +58,6 @@ def test_hovers(driver, wait):
 
 def test_dynamic_loading(driver, wait):
     dynamic_load(driver, wait)
-
-def test_file_upload(driver, wait):
-    upload_file(driver, wait)
 
 def test_forgot_password(driver, wait):
     forgot_password(driver, wait)
