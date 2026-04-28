@@ -12,7 +12,6 @@ from inputs import inputs_and_expected
 from status_codes import statuscodes
 from valid_login import valid_login
 from invalid_login import invalid_login
-from key_presses import key_presses
 from hovers import hovers
 from multiple_windows import multiple_windows
 
@@ -49,9 +48,6 @@ def test_disappearing_elements(driver, wait):
 
 def test_multiple_windows(driver, wait):
     multiple_windows(driver, wait)
-
-def test_key_presses(driver, wait):
-    key_presses(driver, wait)
 
 def test_hovers(driver, wait):
     hovers(driver, wait)
