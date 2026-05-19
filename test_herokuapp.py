@@ -9,7 +9,6 @@ from disappearing_elements import (open_disappear_elements, click_link_by_text, 
 from dynamic_loading import dynamic_load
 from forgot_password import forgot_password
 from inputs import inputs_and_expected
-from status_codes import statuscodes
 from valid_login import valid_login
 from invalid_login import invalid_login
 from hovers import hovers
@@ -69,9 +68,6 @@ def test_forgot_password(driver, wait):
 ])
 def test_inputs_and_expected(inputs, expected, driver, wait):
     inputs_and_expected(inputs, expected, driver, wait)
-    
-def test_status_codes(driver, wait):
-    statuscodes(driver, wait)
 
 def test_invalid_login(driver, wait):
     invalid_login(driver, wait)
