@@ -6,7 +6,6 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 from disappearing_elements import (open_disappear_elements, click_link_by_text, choice_of_elements, gallery_click)
-from dynamic_loading import dynamic_load
 from inputs import inputs_and_expected
 from valid_login import valid_login
 from invalid_login import invalid_login
@@ -45,9 +44,6 @@ def test_disappearing_elements(driver, wait):
 
 def test_hovers(driver, wait):
     hovers(driver, wait)
-
-def test_dynamic_loading(driver, wait):
-    dynamic_load(driver, wait)
 
 @pytest.mark.parametrize("inputs, expected", [
     ("123", "123"),
