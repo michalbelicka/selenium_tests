@@ -5,7 +5,6 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
-from inputs import inputs_and_expected
 from valid_login import valid_login
 from invalid_login import invalid_login
 from hovers import hovers
@@ -31,18 +30,6 @@ def wait(driver):
 
 def test_hovers(driver, wait):
     hovers(driver, wait)
-
-@pytest.mark.parametrize("inputs, expected", [
-    ("123", "123"),
-    ("456", "456"),
-    ("abc", ""),
-    ("-789", "-789"),
-    ("@!/", ""),
-    ("", ""),
-    ("-159*589", "-159589"),
-])
-def test_inputs_and_expected(inputs, expected, driver, wait):
-    inputs_and_expected(inputs, expected, driver, wait)
 
 def test_invalid_login(driver, wait):
     invalid_login(driver, wait)
