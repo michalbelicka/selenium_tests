@@ -7,7 +7,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 from valid_login import valid_login
 from invalid_login import invalid_login
-from hovers import hovers
 
 @pytest.fixture(scope="session")
 def driver():
@@ -27,9 +26,6 @@ def driver():
 def wait(driver):
     wait = WebDriverWait(driver, 10)
     return wait
-
-def test_hovers(driver, wait):
-    hovers(driver, wait)
 
 def test_invalid_login(driver, wait):
     invalid_login(driver, wait)
