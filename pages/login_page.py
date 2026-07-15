@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import NoAlertPresentException
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 
 class LoginPage:
 
@@ -36,6 +37,9 @@ class LoginPage:
             EC.element_to_be_clickable(self.LOGIN_BUTTON)
         )
         login_button.click()
+    
+    def dismiss_chrome_popup(self):
+        ActionChains(self.driver).send_keys(Keys.ESCAPE).perform()
 
     def get_flash_message(self):
         return self.wait.until(
