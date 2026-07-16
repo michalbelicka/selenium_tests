@@ -27,8 +27,6 @@ def test_valid_login(driver, wait):
 
     page.click_login_button()
 
-    page.dismiss_chrome_popup()
-
     page.get_flash_message() == "You logged into a secure area!"
 
     page.click_logout_button()
