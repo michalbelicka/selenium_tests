@@ -27,6 +27,7 @@ jobs:
         with:
           python-version: "3.13.5"
       - name: Disable Chrome password policies
+        # Disable Chrome password leak warnings that block Selenium tests when using demo credentials.
         run: |
           sudo mkdir -p /etc/opt/chrome/policies/managed
           echo '{"PasswordLeakDetectionEnabled": false, "PasswordManagerEnabled": false}' | sudo tee /etc/opt/chrome/policies/managed/selenium-policy.json

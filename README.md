@@ -2,30 +2,46 @@
 
 ## Overview
 
-This is a demo project for learning and practicing Selenium.
-This project tests different parts of the website https://the-internet.herokuapp.com using Selenium WebDriver in Python.
+This is a demo project for learning and practicing Selenium test automation.
+
+The project tests different functionalities of the website [The Internet](https://the-internet.herokuapp.com) using Selenium WebDriver with Python and pytest.
+
+The tests are structured using the Page Object Model (POM) design pattern to separate test logic from page-specific actions and improve maintainability.
+
+## Technologies
+
+- Python
+- Selenium WebDriver
+- pytest
+- GitHub Actions (CI)
+- Page Object Model (POM)
 
 ## Tests included
 
 - Clicking links and buttons
 - Filling forms and input fields
 - Uploading files
-- Login tests with valid and invalid data
+- Login tests with valid and invalid credentials
 - Checking status code pages
-- Parametrized tests for inputs
+- Parametrized tests for different input values
+- Handling multiple browser windows
+- Hover interactions using ActionChains
+- Dynamic content testing
 
 ## Important
 
-- Uses waits to find elements before actions
+- Uses explicit waits with appropriate expected conditions depending on the element state
 - Checks element visibility and clickability before interaction
-- Uses ActionChains for hover and move_by_offset interactions
-- Uses GitHub Actions CI workflow to automatically run tests on schedule, push, or pull request
+- Uses Page Object Model to keep tests clean and reusable
+- Uses ActionChains for advanced interactions such as hover and mouse movements
+- Uses GitHub Actions CI workflow to automatically run tests on push, pull request and scheduled runs
+- Configures Chrome policies in CI to prevent password leak warnings from blocking automated tests
 
 ## Future Improvements
 
-- Add custom wait conditions to reduce code duplications
-- Add tests covering more scenarios on the page
-- Consider trying Playwright for comparison
+- Add automated test reports
+- Capture screenshots automatically when tests fail
+- Add more test scenarios and edge cases
 
 ## How to run tests
 
