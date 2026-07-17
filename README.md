@@ -13,6 +13,7 @@ The tests are structured using the Page Object Model (POM) design pattern to sep
 - Python
 - Selenium WebDriver
 - pytest
+- pytest-html
 - GitHub Actions (CI)
 - Page Object Model (POM)
 
@@ -34,14 +35,34 @@ The tests are structured using the Page Object Model (POM) design pattern to sep
 - Checks element visibility and clickability before interaction
 - Uses Page Object Model to keep tests clean and reusable
 - Uses ActionChains for advanced interactions such as hover and mouse movements
+- Uses pytest hooks to automatically capture screenshots when Selenium tests fail
+- Generates HTML test reports using pytest-html
 - Uses GitHub Actions CI workflow to automatically run tests on push, pull request and scheduled runs
 - Configures Chrome policies in CI to prevent password leak warnings from blocking automated tests
 
+## Test Reports and Screenshots
+
+HTML test reports are generated using pytest-html.
+
+The report is created in:
+
+```text
+reports/report.html
+```
+
+When a Selenium test fails, an automatic screenshot is saved in:
+
+```text
+reports/screenshots/
+```
+
+Screenshots help with debugging failed tests by capturing the browser state at the moment of failure.
+
 ## Future Improvements
 
-- Add automated test reports
-- Capture screenshots automatically when tests fail
 - Add more test scenarios and edge cases
+- Add support for additional browsers
+- Improve test organization and maintainability
 
 ## How to run tests
 
@@ -55,4 +76,4 @@ The tests are structured using the Page Object Model (POM) design pattern to sep
    `pip install -r requirements.txt`
 
 4. Run the tests:  
-   `pytest -v`
+   `pytest --html=reports/report.html --self-contained-html`
