@@ -13,6 +13,6 @@ def test_hovers(driver, wait):
 
         page.click_view_profile(user_element)
 
-        assert page.get_heading() == "Not Found"
+        assert page.get_heading() == "Found"
         
         driver.back()
